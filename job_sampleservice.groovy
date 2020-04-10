@@ -2,8 +2,8 @@ job('Spring-boot-build') {
     scm {
         git {
             remote {
-                url("https://github.com/vinayaka-rs/spring-boot-gradle.git")
-                credentials("605abf89-a797-4b53-ba81-427f3b29a12d")
+                url("https://github.com/vinayaka-rs/sample-spring-boot-microservice.git")
+                credentials("github_id")
             }
             extensions {
                 wipeOutWorkspace()
@@ -54,8 +54,8 @@ job('Spring-boot-test') {
     scm {
         git {
             remote {
-                url("https://github.com/vinayaka-rs/spring-boot-gradle.git")
-                credentials("605abf89-a797-4b53-ba81-427f3b29a12d")
+                url("https://github.com/vinayaka-rs/sample-spring-boot-microservice.git")
+                credentials("github_id")
             }
             extensions {
                 wipeOutWorkspace()
@@ -76,8 +76,8 @@ job('Spring-build-publish') {
     scm {
         git {
             remote {
-                url("https://github.com/vinayaka-rs/spring-boot-gradle.git")
-                credentials("605abf89-a797-4b53-ba81-427f3b29a12d")
+                url("https://github.com/vinayaka-rs/sample-spring-boot-microservice.git")
+                credentials("github_id")
             }
             extensions {
                 wipeOutWorkspace()
