@@ -13,7 +13,14 @@ job('Spring-boot-build') {
     }
 
     steps {
-        gradle('clean build')
+        gradle {
+            fromRootBuildScriptDir(true)
+            // Sets the executable flag on the wrapper script file before invoking the file.
+            makeExecutable(true)
+            // Specifies the Gradle tasks to be invoked.
+            tasks('clean build')
+        }
+        //gradle('clean build')
     }
 
     publishers {
@@ -64,7 +71,14 @@ job('Spring-boot-test') {
         }
     }
     steps {
-        gradle('clean test')
+        gradle {
+            fromRootBuildScriptDir(true)
+            // Sets the executable flag on the wrapper script file before invoking the file.
+            makeExecutable(true)
+            // Specifies the Gradle tasks to be invoked.
+            tasks('clean build test')
+        }
+        //gradle('clean test')
     }
 
     publishers {
@@ -86,7 +100,14 @@ job('Spring-build-publish') {
         }
     }
     steps {
-        gradle('clean build')
+        gradle {
+            fromRootBuildScriptDir(true)
+            // Sets the executable flag on the wrapper script file before invoking the file.
+            makeExecutable(true)
+            // Specifies the Gradle tasks to be invoked.
+            tasks('clean build')
+        }
+        //gradle('clean build')
     }
 
     publishers {
