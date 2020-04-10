@@ -1,0 +1,34 @@
+apply plugin: 'groovy'
+
+
+ext {
+    jobDslVersion = '1.47'
+    jenkinsVersion = '1.642.1'
+}
+
+repositories {
+    jcenter()
+    maven {
+        url 'http://repo.jenkins-ci.org/releases/'
+    }
+
+    ivy {
+        layout "maven"
+    }
+}
+
+configurations {
+    jobDsl
+    testPlugins
+}
+
+configurations.compile.extendsFrom(configurations.jobDsl)
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.5'
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.1'
+}
